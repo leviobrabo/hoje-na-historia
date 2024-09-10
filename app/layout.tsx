@@ -1,18 +1,4 @@
-import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
-import "./globals.css";
-import Footer from "@/components/global/Footer";
-import Header from "@/components/global/Header";
-import ReactQueryClientProvider from "@/context/ReactQueryClientProvider";
-import { Analytics } from '@vercel/analytics/react';
-import Script from 'next/script';
-
-const outfit = Outfit({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Hoje na história",
-  description: "Saiba o que o dia de hoje tem a nos contar historicamente.",
-};
+import Script from 'next/script'; // Já está importado no seu código
 
 export default function RootLayout({
   children,
@@ -45,6 +31,7 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Aqui você insere o código do Native Banner */}
         <Script
           async
           data-cfasync="false"
@@ -55,6 +42,8 @@ export default function RootLayout({
         <ReactQueryClientProvider>
           <Header />
           {children}
+          {/* Aqui, você pode inserir o container do Native Banner */}
+          <div id="container-596c35b184829f16cdf98a7f664a19da"></div>
           <Footer />
         </ReactQueryClientProvider>
         <Analytics />
