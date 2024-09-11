@@ -7,6 +7,10 @@ import { Outfit } from 'next/font/google';
 import './globals.css';
 
 const outfit = Outfit({ subsets: ["latin"] });
+export const metadata: Metadata = {
+  title: "Hoje na história",
+  description: "Saiba o que o dia de hoje tem a nos contar historicamente.",
+};
 
 export default function RootLayout({
   children,
