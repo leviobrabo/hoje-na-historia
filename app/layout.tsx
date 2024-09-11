@@ -27,7 +27,7 @@ export default function RootLayout({
         />
         <Script
           strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-SZP8KF5M0E`}
+          src="https://www.googletagmanager.com/gtag/js?id=G-SZP8KF5M0E"
         />
         <Script
           id="google-analytics"
@@ -46,17 +46,23 @@ export default function RootLayout({
         <Script
           async
           data-cfasync="false"
-          src="//pl24337684.cpmrevenuenugate.com/596c35b184829f16cdf98a7f664a19da/invoke.js"
+          src="//pl24337684.cpmrevenuegate.com/596c35b184829f16cdf98a7f664a19da/invoke.js"
         />
       </head>
       <body className={`${outfit.className} flex flex-col min-h-screen justify-between bg-CustomAntiqueWhite dark:bg-CustomCharcoal transition-colors duration-1000`}>
         <ReactQueryClientProvider>
           <Header />
           {children}
+
+          {/* Ad container */}
           <div id="container-596c35b184829f16cdf98a7f664a19da"></div>
+
           <Footer />
         </ReactQueryClientProvider>
         <Analytics />
+
+        {/* Ad script for invoking ad */}
+        <Script async data-cfasync="false" src="//pl24337684.cpmrevenuegate.com/596c35b184829f16cdf98a7f664a19da/invoke.js" />
       </body>
     </html>
   );
