@@ -5,6 +5,7 @@ import Header from '@/components/global/Header';
 import { Analytics } from '@vercel/analytics/react';
 import { Outfit } from 'next/font/google';
 import './globals.css';
+import type { Metadata } from 'next';
 
 const outfit = Outfit({ subsets: ["latin"] });
 export const metadata: Metadata = {
