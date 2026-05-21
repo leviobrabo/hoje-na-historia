@@ -10,28 +10,39 @@ import type { Metadata } from 'next';
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.historiadodia.com'),
   title: {
-    default: 'Hoje na História | historiadodia.com',
+    default: 'Hoje na História — O Que Aconteceu Neste Dia',
     template: '%s | Hoje na História',
   },
-  description: 'Descubra o que aconteceu hoje na história: eventos, civilizações, personagens históricos, descobertas científicas e muito mais em português.',
-  keywords: ['história', 'hoje na história', 'eventos históricos', 'civilizações', 'personagens históricos', 'brasil', 'mundo', 'fatos históricos'],
+  description: 'Descubra o que aconteceu hoje na história: guerras, descobertas científicas, grandes personagens, civilizações antigas e fatos que mudaram o mundo — tudo em português.',
+  keywords: [
+    'hoje na história', 'história do dia', 'fatos históricos', 'eventos históricos',
+    'civilizações antigas', 'personagens históricos', 'descobertas científicas',
+    'guerras históricas', 'história do brasil', 'história do mundo', 'historiadodia.com',
+  ],
   openGraph: {
-    title: 'Hoje na História | historiadodia.com',
-    description: 'Descubra o que aconteceu hoje na história: eventos, civilizações, personagens históricos e muito mais.',
+    title: 'Hoje na História — O Que Aconteceu Neste Dia',
+    description: 'Explore guerras, descobertas, civilizações e personagens que marcaram a história da humanidade. Novo conteúdo todo dia, em português.',
     url: 'https://www.historiadodia.com',
     siteName: 'Hoje na História',
     locale: 'pt_BR',
     type: 'website',
+    images: [{ url: '/logo.jpg', width: 1200, height: 630, alt: 'Hoje na História' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hoje na História',
-    description: 'Descubra o que aconteceu hoje na história.',
+    title: 'Hoje na História — O Que Aconteceu Neste Dia',
+    description: 'Guerras, descobertas, civilizações e personagens que marcaram a história. Em português.',
+    images: ['/logo.jpg'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 
@@ -77,6 +88,14 @@ export default function RootLayout({
           src="//pl24337684.cpmrevenuegate.com/596c35b184829f16cdf98a7f664a19da/invoke.js"
         />
 
+        {/* Monetag - Multitag */}
+        <Script
+          strategy="afterInteractive"
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="241767"
+          data-cfasync="false"
+        />
+
         {/* Schema.org JSON-LD */}
         <Script
           id="schema-org"
@@ -87,7 +106,7 @@ export default function RootLayout({
               "@type": "WebSite",
               "name": "Hoje na História",
               "url": "https://www.historiadodia.com",
-              "description": "Descubra o que aconteceu hoje na história: eventos, civilizações, personagens históricos e muito mais.",
+              "description": "Descubra o que aconteceu hoje na história: guerras, descobertas, civilizações e personagens históricos.",
               "inLanguage": "pt-BR",
               "potentialAction": {
                 "@type": "SearchAction",
@@ -99,7 +118,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfit.className} flex flex-col min-h-screen justify-between bg-CustomAntiqueWhite dark:bg-CustomCharcoal transition-colors duration-500`}
+        className={`${outfit.className} flex flex-col min-h-screen justify-between transition-colors duration-500 bg-gradient-to-br from-[#FBF0E2] via-[#F5E6C5] to-[#FAEBD7] dark:from-[#0d1b2a] dark:via-[#162130] dark:to-[#1e2d3d]`}
       >
         <ReactQueryClientProvider>
           <Header />

@@ -13,7 +13,7 @@ const Footer = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="w-full border-t border-CustomSepia/15 dark:border-CustomAntiqueWhite/10 bg-CustomAntiqueWhite dark:bg-CustomCharcoal mt-10">
+    <footer className="w-full border-t border-CustomSepia/10 dark:border-white/5 bg-gradient-to-b from-[#F5E6C5]/60 to-[#FBF0E2] dark:from-[#0d1b2a]/80 dark:to-[#0d1b2a] mt-10 backdrop-blur-sm">
       <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col gap-6">
         {/* Nav links */}
         <nav className="flex flex-wrap gap-x-5 gap-y-2 justify-center">

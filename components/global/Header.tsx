@@ -21,14 +21,14 @@ const Header = () => {
   const pathname = usePathname()
 
   return (
-    <header className="w-full border-b border-CustomSepia/20 dark:border-CustomAntiqueWhite/10 bg-CustomAntiqueWhite dark:bg-CustomCharcoal sticky top-0 z-50 shadow-sm">
+    <header className="w-full border-b border-CustomSepia/10 dark:border-white/5 bg-[#FBF0E2]/90 dark:bg-[#0d1b2a]/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex flex-col leading-tight shrink-0">
-          <span className="font-bold text-xl lg:text-2xl text-CustomSepia dark:text-CustomAntiqueWhite tracking-tight">
+          <span className="font-bold text-xl lg:text-2xl tracking-tight bg-gradient-to-r from-CustomSepia via-[#8B5E3C] to-CustomTerracotta dark:from-CustomOldGold dark:via-[#E8B860] dark:to-CustomOldGold bg-clip-text text-transparent">
             Hoje na História
           </span>
-          <span className="text-xs text-CustomSepia/60 dark:text-CustomAntiqueWhite/50 hidden sm:block">
+          <span className="text-xs text-CustomSepia/50 dark:text-CustomAntiqueWhite/40 hidden sm:block">
             historiadodia.com
           </span>
         </Link>
@@ -65,7 +65,7 @@ const Header = () => {
 
       {/* Mobile nav */}
       {menuOpen && (
-        <nav className="lg:hidden border-t border-CustomSepia/10 dark:border-CustomAntiqueWhite/10 px-4 py-3 flex flex-col gap-1 bg-CustomAntiqueWhite dark:bg-CustomCharcoal">
+        <nav className="lg:hidden border-t border-CustomSepia/10 dark:border-white/5 px-4 py-3 flex flex-col gap-1 bg-[#FBF0E2]/95 dark:bg-[#0d1b2a]/95 backdrop-blur-md">
           {navLinks.map((link) => (
             <Link
               key={link.href}

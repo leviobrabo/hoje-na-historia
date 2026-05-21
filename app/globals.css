@@ -64,6 +64,81 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: rgba(207, 181, 59, 0.3);
+    color: #704214;
+  }
+
+  .dark ::selection {
+    background-color: rgba(207, 181, 59, 0.25);
+    color: #FAEBD7;
+  }
+}
+
+@layer utilities {
+  /* Gradient text utility */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #CFB53B, #E8A020, #E2725B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-sepia {
+    background: linear-gradient(135deg, #704214, #8B5E3C, #704214);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Card with gradient border glow */
+  .card-glow {
+    position: relative;
+    background: linear-gradient(135deg, rgba(250, 235, 215, 0.6), rgba(245, 230, 197, 0.4));
+    border: 1px solid rgba(112, 66, 20, 0.12);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .card-glow:hover {
+    border-color: rgba(207, 181, 59, 0.4);
+    box-shadow: 0 4px 24px rgba(207, 181, 59, 0.08);
+  }
+
+  .dark .card-glow {
+    background: linear-gradient(135deg, rgba(30, 45, 61, 0.6), rgba(22, 33, 48, 0.4));
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .dark .card-glow:hover {
+    border-color: rgba(207, 181, 59, 0.3);
+    box-shadow: 0 4px 24px rgba(207, 181, 59, 0.06);
+  }
+
+  /* Section hero gradient */
+  .hero-gradient {
+    background: linear-gradient(
+      160deg,
+      rgba(112, 66, 20, 0.08) 0%,
+      rgba(207, 181, 59, 0.05) 40%,
+      transparent 100%
+    );
+  }
+
+  .dark .hero-gradient {
+    background: linear-gradient(
+      160deg,
+      rgba(13, 27, 42, 0.9) 0%,
+      rgba(26, 45, 64, 0.6) 50%,
+      transparent 100%
+    );
   }
 }
