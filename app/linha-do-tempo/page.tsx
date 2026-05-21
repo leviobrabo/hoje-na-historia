@@ -1,5 +1,4 @@
-import { FaAncient, FaScroll } from 'react-icons/fa'
-import { GiAncientColumns } from 'react-icons/gi'
+import { FaLandmark, FaScroll } from 'react-icons/fa'
 import AdBanner from '@/components/AdBanner'
 import type { Metadata } from 'next'
 
