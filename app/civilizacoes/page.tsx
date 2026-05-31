@@ -7,7 +7,7 @@ import AdBanner from '@/components/AdBanner'
 interface Civilizacao {
   titulo: string
   texto: string
-  link: string
+  link?: string
   imagem: string
 }
 

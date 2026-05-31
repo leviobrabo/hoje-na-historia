@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { FaCalendarAlt, FaSearch } from 'react-icons/fa'
+import { FaCalendarAlt } from 'react-icons/fa'
 import AdBanner from '@/components/AdBanner'
 import Phrase from '@/components/Phrase'
 
@@ -28,7 +28,7 @@ export default function EventosPage() {
     setHoje(now.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }))
   }, [])
 
-  const diasNoMes = new Date(2024, mesSelecionado + 1, 0).getDate()
+  const diasNoMes = new Date(new Date().getFullYear(), mesSelecionado + 1, 0).getDate()
 
   const isHoje = mesSelecionado === mesAtual && diaSelecionado === diaAtual
 
@@ -117,7 +117,7 @@ export default function EventosPage() {
               Eventos de {diaSelecionado} de {meses[mesSelecionado]}
             </h2>
           </div>
-          <Phrase />
+          <Phrase month={mesSelecionado} day={diaSelecionado} />
         </section>
 
         <AdBanner position="mobile-banner" />

@@ -48,8 +48,10 @@ const mulheres = [
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
   const tipo = searchParams.get('tipo') || 'viloes'
-  const limit = parseInt(searchParams.get('limit') || '20')
-  const offset = parseInt(searchParams.get('offset') || '0')
+  const limitRaw = parseInt(searchParams.get('limit') || '20', 10)
+  const offsetRaw = parseInt(searchParams.get('offset') || '0', 10)
+  const limit = isNaN(limitRaw) || limitRaw < 1 ? 20 : Math.min(limitRaw, 100)
+  const offset = isNaN(offsetRaw) || offsetRaw < 0 ? 0 : offsetRaw
 
   const dataMap: Record<string, typeof viloes | typeof inventores | typeof mulheres> = {
     viloes,
