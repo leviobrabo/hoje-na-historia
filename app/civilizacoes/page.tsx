@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { FaGlobe, FaExternalLinkAlt } from 'react-icons/fa'
 import AdBanner from '@/components/AdBanner'
 
@@ -125,13 +126,12 @@ export default function CivilizacoesPage() {
                 >
                   {civ.imagem && (
                     <div className="relative h-36 overflow-hidden">
-                      <img
+                      <Image
                         src={civ.imagem}
                         alt={civ.titulo}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                          ;(e.target as HTMLImageElement).style.display = 'none'
-                        }}
+                        fill
+                        unoptimized
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-CustomCharcoal/60 to-transparent" />
                       <span className="absolute top-2 right-2 text-[10px] px-2 py-0.5 rounded-full bg-CustomOldGold/90 text-CustomCharcoal font-medium">
